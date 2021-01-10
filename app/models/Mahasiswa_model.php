@@ -12,7 +12,7 @@
 
         public function getAllUser()
         {
-            $this->db->query("SELECT * FROM ". $this->table);
+            $this->db->query("SELECT * FROM status, ". $this->table ." WHERE user.path_status = status.id_status");
             return $this->db->resultSet();
         }
 

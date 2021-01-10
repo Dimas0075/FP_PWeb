@@ -5,7 +5,7 @@
         {
             $data['judul'] = "List Mahasiswa";
             $data['mhs'] = $this->model('Mahasiswa_model')->getAllUser();
-            $this->view('templates/header', $data);
+            $this->view('templates/headerPeserta', $data);
             $this->view('mahasiswa/index', $data);
             $this->view('templates/footer', $data);
         }

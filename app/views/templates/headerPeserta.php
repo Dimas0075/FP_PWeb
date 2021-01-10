@@ -14,8 +14,11 @@
         <ul>
             <li><a href="<?= BASEURL; ?>">Home</a></li>
             <li><a href="<?= BASEURL; ?>/mahasiswa">Peserta</a></li>
-            <li><a href="<?= BASEURL; ?>/admin">Admin</a></li>
-            <li style="float:right"><a href="<?= BASEURL; ?>/login">Login</a></li>
-            <li style="float:right"><a href="#" role="button" data-toggle="modal" data-target="#formModal">Daftar</a></li>
+            <li style="float:right" class="dropdown"><a href="#">Account</a>
+                <ul class="isi-dropdown">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>

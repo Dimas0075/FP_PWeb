@@ -1,36 +1,45 @@
-<div class="container mt-3">
+<?php
+// echo $_SESSION['username'];
+// session_unset();
 
-    <!-- <?php var_dump($data['mhs']); ?> -->
-    <table class="table table-hover table-bordered">
-        <thead>
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['username'])) {
+    header("Location: " . BASEURL . "/home");
+}
+?>
+
+<main>
+    <div id="services" class="card">
+        <h1>Peserta</h1>
+        <table>
             <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Nomer Identitas</th>
-                <th scope="col">Path</th>
+                <th>Nomor</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+                <!-- <th>Status</th> -->
             </tr>
-        </thead>
-        <tbody>
             <?php $jumlah_array = 1; ?>
             <?php foreach ($data['mhs'] as $row) : ?>
-                <?php 
-                    if ($row['path'] == 1) {
-                        $namaPath = "Beginner";
-                    } else if ($row['path'] == 2) {
-                        $namaPath = "Intermediate";
-                    } else if ($row['path'] == 3) {
-                        $namaPath = "Expert";
-                    }
+                <?php
+                if ($row['path'] == 1) {
+                    $namaPath = "Beginner";
+                } else if ($row['path'] == 2) {
+                    $namaPath = "Intermediate";
+                } else if ($row['path'] == 3) {
+                    $namaPath = "Expert";
+                }
                 ?>
                 <tr>
-                    <th scope="row"><?= $jumlah_array; ?></th>
+                    <td><?= $jumlah_array; ?></td>
                     <td><?= $row['nama']; ?></td>
-                    <td><?= $row['nomor_identitas']; ?></td>
                     <td><?= $namaPath; ?></td>
+                    <!-- <td><?= $row['status']; ?></td> -->
                 </tr>
                 <?php $jumlah_array++ ?>
             <?php endforeach; ?>
-        </tbody>
-    </table>
-
-</div>
+        </table>
+    </div>
+</main>

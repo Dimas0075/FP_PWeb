@@ -1,32 +1,28 @@
-  <div class="container">
-      <div class="jumbotron mt-3">
-          <h1 class="display-4">Selamat Datang!</h1>
-          <hr class="my-4">
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#formModal">Daftar</a>
-          <div class="row mt-3">
-              <div class="col-lg-6">
-                  <?php Flasher::flash(); ?>
-              </div>
-          </div>
-      </div>
-
-      <div class="card-deck">
-          <?php foreach ($data['toefl'] as $data) : ?>
-              <div class="card mb-3">
-                  <img class="card-img-top" src="<?= BASEURL; ?>/img/<?= $data['image']; ?>" alt="Card image cap">
-                  <div class="card-body">
-                      <h5 class="card-title"><?= $data['nama_path']; ?></h5>
-                      <p class="card-text"><?= $data['deskripsi']; ?></p>
-                      <p class="card-text"><small class="text-muted">Rp.<?= $data['harga']; ?></small></p>
-                  </div>
-              </div>
-          <?php endforeach; ?>
-      </div>
+  <div class="utama">
+      <h1>TOEFL</h1>
+      <p lang="id" translate="no">Exam Prepation and Online Courses</p>
   </div>
 
+  <!-- <?= var_dump($data); ?> -->
+  <main>
+      <div id="services" class="card">
+          <h1>Paket</h1>
+          <div class="row">
+              <?php foreach ($data['toefl'] as $data) : ?>
+                  <div class="column">
+                      <div class="header">
+                          <h2><?= $data['nama_path']; ?></h2>
+                      </div>
+                      <div class="container">
+                          <p><?= $data['deskripsi']; ?></p>
+                      </div>
+                  </div>
+              <?php endforeach; ?>
+          </div>
+      </div>
+  </main>
 
-  <!-- Modal -->
+  <!-- Modal! -->
   <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -53,7 +49,7 @@
                       <div class="input-group-prepend">
                           <button class="btn btn-outline-secondary dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Path</button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#">1. Beginner</a>
+                              <a class="dropdown-item" href="#path">1. Beginner</a>
                               <a class="dropdown-item" href="#">2. Intermediate</a>
                               <a class="dropdown-item" href="#">3. Expert</a>
                           </div>

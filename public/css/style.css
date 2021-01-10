@@ -1,0 +1,235 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+/*header*/
+* {
+   box-sizing: border-box;
+}
+
+header
+{
+   display: inline;
+   /* hal ini berfungsi untuk navigasi dapat menempel pada seluruh halaman dengan menerapkan properti display inline */
+}
+
+nav
+{
+   background-color: #14274e;
+   padding: 5px;
+   position: sticky;
+   top: 0;
+   /* nilai top diperlukan agar ketika pengguna melakukan scrolling, elemen navigasi tetap berada diatas jendela broswer */
+}
+
+.pink{
+   position:fixed;
+   top:0;
+   background:#e97171;
+ }
+
+li a
+{
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+   text-align: center;
+   color: white;
+}
+
+nav li
+{
+   display: inline;
+   list-style-type: none;
+   margin-right: 20px;
+}
+
+li a:hover
+{
+   font-weight: bold;
+   color: #9ba4b4;
+}
+
+.utama
+{
+   font-size: 20px;
+   padding: 120px;
+   background-color: #14274e;
+   text-align: center;
+   color: white;
+}
+
+.utama h1
+{
+   font-size: 50px;
+}
+
+/*main*/
+body
+{
+   font-family: 'Quicksand', sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+/* #content
+{
+   float: left;
+   width: 75%;
+} */
+
+* {
+   box-sizing: border-box;
+ }
+ 
+ /* Create three equal columns that floats next to each other */
+ .column {
+   float: left;
+   width: 33.33%;
+   padding: 10px;
+   height: 300px; /* Should be removed. Only for demonstration */
+ }
+ 
+ /* Clear floats after the columns */
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+
+ @media screen and (max-width: 1000px)
+ {
+    #content,
+    .column,
+    aside 
+    {
+       width: 100%;
+       /* padding: 0; */
+    }
+ }
+
+main
+{
+   padding: 20px;
+   overflow: auto;
+}
+
+main h1
+{
+   color: #394867;
+}
+
+footer h1
+{
+   color: #394867;
+}
+
+h2
+{
+   color: #fff;
+   text-align: center;
+}
+
+.profile header
+{
+   text-align: center;
+}
+
+.featured-image
+{
+   width: 100%;
+   max-height: 300px;
+   object-fit: cover;
+   object-position: center;
+   /* kedua properti "object" diatas membuat gambar yang ditampilkan dapat menyesuaikan lebar dan panjang dengan mempertahankan kualitas rasio aslinya.
+   Tetapi untuk menyesuaikannya terdapat area gamabr yang terpotong/tidak ditampilkan, tetapi gamabr tetan proposional
+   */
+}
+
+.profile img
+{
+   width: 200px;
+}
+
+.card 
+{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   /*https://www.cssmatic.com/box-shadow.*/
+   padding: 20px;
+   margin-top: 20px;
+   margin-bottom: 70px;
+}
+
+aside
+{
+   float: right;
+   /* width: 25%; */
+   padding-left: 20px;
+}
+
+/*footer*/
+footer
+{
+   position: fixed;
+   padding: 5px;
+   color: #f1f6f9;
+   background-color: #14274e;
+   text-align: center;
+   bottom: 0;
+   width: 100%;
+   font-weight: bold;
+}
+
+/* div.card {
+   width: 350px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   text-align: center;
+} */
+
+div.header {
+   background-color: #9ba4b4;
+   color: white;
+   padding: 10px;
+   font-size: 40px;
+}
+
+div.container {
+   padding: 10px;
+   padding-bottom: 30px;
+}
+
+table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ td, th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+ }
+ 
+ tr:nth-child(even) {
+   background-color: #dddddd;
+ }
+
+/* dropdown */
+ li.dropdown {
+   display: inline-block;
+   text-align: center;
+	text-decoration: none;
+}
+
+.dropdown:hover .isi-dropdown {
+	display: block;
+}
+
+.isi-dropdown {
+   position: absolute;
+   display: none;
+   box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+   /* z-index: 1; */
+   background-color: #9ba4b4;
+   padding: 14px 16px;
+}
