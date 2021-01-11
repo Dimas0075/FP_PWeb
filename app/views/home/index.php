@@ -36,26 +36,45 @@
 
                   <form action="<?= BASEURL; ?>/home/tambah" method="post">
                       <input type="hidden" name="id" id="id">
+                      <input type="hidden" name="status" id="status">
                       <div class="form-group">
                           <label for="nama">Nama</label>
                           <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
                       </div>
 
                       <div class="form-group">
-                          <label for="nrp">Nomor Identitas</label>
+                          <label for="username">Username</label>
+                          <input type="text" class="form-control" id="username" name="username" autocomplete="off">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" id="password" name="password" autocomplete="off">
+                      </div>
+
+                      <div class="form-group mb-4">
+                          <label for="ktp">Nomor Identitas</label>
                           <input type="number" class="form-control" id="ktp" name="ktp" autocomplete="off">
                       </div>
 
-                      <div class="input-group-prepend">
-                          <button class="btn btn-outline-secondary dropdown-toggle mb-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Path</button>
-                          <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#path">1. Beginner</a>
-                              <a class="dropdown-item" href="#">2. Intermediate</a>
-                              <a class="dropdown-item" href="#">3. Expert</a>
+                      <div class="input-group mb-4">
+                          <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Path</label>
+                          </div>
+                          <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>Choose...</option>
+                              <option value="1">Beginner</option>
+                              <option value="2">Intermediate</option>
+                              <option value="3">Expert</option>
+                          </select>
+                      </div>
+
+                      <div class="input-group mb-4">
+                          <div class="custom-file mb-3">
+                              <input type="file" class="custom-file-input" id="customFile" name="filename">
+                              <label class="custom-file-label" for="customFile">Choose file</label>
                           </div>
                       </div>
-                      <input type="text" class="form-control" aria-label="Text input with dropdown button" id="path" name="path" autocomplete="off" placeholder="Tuliskan angka saja...">
-
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
