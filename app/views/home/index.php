@@ -4,6 +4,11 @@
   </div>
 
   <!-- <?= var_dump($data); ?> -->
+  <div class="row">
+      <div class="col-lg-6">
+          <?php Flasher::flash(); ?>
+      </div>
+  </div>
   <main>
       <div id="services" class="card">
           <h1>Paket</h1>
@@ -34,7 +39,7 @@
               </div>
               <div class="modal-body">
 
-                  <form action="<?= BASEURL; ?>/home/tambah" method="post">
+                  <form action="<?= BASEURL; ?>/home/tambah" method="post" enctype="multipart/form-data">
                       <input type="hidden" name="id" id="id">
                       <input type="hidden" name="status" id="status">
                       <div class="form-group">
@@ -61,7 +66,7 @@
                           <div class="input-group-prepend">
                               <label class="input-group-text" for="inputGroupSelect01">Path</label>
                           </div>
-                          <select class="custom-select" id="inputGroupSelect01">
+                          <select class="custom-select" id="inputGroupSelect01" name="path">
                               <option selected>Choose...</option>
                               <option value="1">Beginner</option>
                               <option value="2">Intermediate</option>
@@ -71,8 +76,8 @@
 
                       <div class="input-group mb-4">
                           <div class="custom-file mb-3">
-                              <input type="file" class="custom-file-input" id="customFile" name="filename">
-                              <label class="custom-file-label" for="customFile">Choose file</label>
+                              <input type="file" class="custom-file-input" id="foto" name="foto">
+                              <label class="custom-file-label" for="foto">Choose file</label>
                           </div>
                       </div>
               </div>
