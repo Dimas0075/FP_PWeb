@@ -7,8 +7,9 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['username'])) {
-    header("Location: " . BASEURL . "/home");
+    header("Location: " . BASEURL . "/login");
 }
+
 ?>
 
 <main>
@@ -23,19 +24,10 @@ if (!isset($_SESSION['username'])) {
             </tr>
             <?php $jumlah_array = 1; ?>
             <?php foreach ($data['mhs'] as $row) : ?>
-                <?php
-                if ($row['path'] == 1) {
-                    $namaPath = "Beginner";
-                } else if ($row['path'] == 2) {
-                    $namaPath = "Intermediate";
-                } else if ($row['path'] == 3) {
-                    $namaPath = "Expert";
-                }
-                ?>
                 <tr>
                     <td><?= $jumlah_array; ?></td>
                     <td><?= $row['nama']; ?></td>
-                    <td><?= $namaPath; ?></td>
+                    <td><?= $row['nama_path']; ?></td>
                     <!-- <td><?= $row['status']; ?></td> -->
                 </tr>
                 <?php $jumlah_array++ ?>

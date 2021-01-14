@@ -9,10 +9,10 @@
 
 <body>
     <main>
-        <form action="<?= BASEURL; ?>/login/cek" method="post">
+        <form action="<?= BASEURL; ?>/login/cekAdmin" method="post">
             <div class="center">
                 <div class="container">
-                    <h1 style="font-family: Quicksand;">Login Peserta</h1>
+                    <h1 style="font-family: Quicksand;">Login Admin</h1>
                     <label for="uname" style="font-family: Quicksand;"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" id="username" name="username" required>
 

@@ -4,22 +4,22 @@
   </div>
 
   <!-- <?= var_dump($data); ?> -->
-  <div class="row">
-      <div class="col-lg-6">
-          <?php Flasher::flash(); ?>
-      </div>
-  </div>
-  <main>
-      <div id="services" class="card">
+
+  <main style="margin-bottom: 60px;">
+      <div id="services" class="card" >
           <h1>Paket</h1>
           <div class="row">
               <?php foreach ($data['toefl'] as $data) : ?>
                   <div class="column">
                       <div class="header">
+                          <img src="<?= BASEURL; ?>/img/<?= $data['image']; ?>" width="444px" height="450px">
                           <h2><?= $data['nama_path']; ?></h2>
                       </div>
                       <div class="container">
                           <p><?= $data['deskripsi']; ?></p>
+                      </div>
+                      <div class="container">
+                          <h3>Rp.<?= number_format($data["harga"],2,",",".");?></h3>
                       </div>
                   </div>
               <?php endforeach; ?>

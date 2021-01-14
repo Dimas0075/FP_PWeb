@@ -24,50 +24,49 @@ class User_model
 
     public function upload()
     {
-        $target_dir = "../../public/img/";
+        $namaFile = $_FILES['foto']['name'];
+        $ukuranFile = $_FILES['foto']['size'];
+        $error = $_FILES['foto']['error'];
+        $tmpName = $_FILES['foto']['tmp_name'];
 
-        $target_file = $target_dir . basename($_FILES["foto"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        // Check if file already exists
-        if (file_exists($target_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
+        //mengecek apakah upload kosong
+        if ($error === 4) {
+            echo "<script>
+                alert('Pilih gambar terlebih dahulu');
+            </script>";
+            return false;
         }
 
-        // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 1000000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
+        $eksentsiFile = ['jpg', 'jpeg', 'png'];
+        $ekstensiFoto = explode(".", $namaFile);
+        $ekstensiFoto = strtolower(end($ekstensiFoto));
+
+        if (!in_array($ekstensiFoto, $eksentsiFile)) {
+            echo "<script>
+                alert('Format file tidak diizinkan!');
+            </script>";
+            return false;
         }
 
-        // Allow certain file formats
-        if (
-            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif"
-        ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
+        if ($ukuranFile > 10000000) {
+            echo "<script>
+                alert('Ukuran gambar terlalu besar');
+            </script>";
+            return false;
         }
 
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
-            // if everything is ok, try to upload file
-        } else {
-           
-        }
+        $namaFileBaru = uniqid();
+        $namaFileBaru .= '.';
+        $namaFileBaru .=  $ekstensiFoto;
 
-        var_dump($uploadOk);
+        move_uploaded_file($tmpName, 'C:\\xampp\\htdocs\\pwebFP\\public\\img\\' . $namaFileBaru);
 
-        return $target_file;
+        return $namaFileBaru;
     }
 
-    public function tambahPesertaToefl($data)
+    function tambahPesertaToefl($data)
     {
         $foto = $this->upload();
-        echo "test";
         var_dump($_FILES["foto"]["nama"]);
         $query = "INSERT INTO user VALUES ('', :nama, :username, :password, :nomor_identitas, :path, 1, :foto )";
         $this->db->query($query);

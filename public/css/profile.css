@@ -1,0 +1,47 @@
+/*
+ * FilePond Custom Styles
+ */
+
+ .filepond--drop-label {
+	color: #4c4e53;
+}
+
+.filepond--label-action {
+	text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+	background-color: #edf0f4;
+}
+
+
+/**
+ * Page Styles
+ */
+
+.filepond--root {
+	width:150px;
+	margin: 0 auto;
+}
+
+
+/* lingkaran profiel */
+.lingkaran 
+{
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    background: #f1f6f9;
+    margin-left: 45%;
+    margin-right: 50%;
+}
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.icon 
+{
+    margin-top: 35%;
+    margin-left: 35%;
+}

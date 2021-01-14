@@ -3,9 +3,17 @@
     {
         public function index()
         {
+            if (!isset($_SESSION)) {
+                session_start();
+            }
             $data['judul'] = "Home Index";
             $data['toefl'] = $this->model('User_model')->getAllToefl();
-            $this->view('templates/header', $data);
+            if (!isset($_SESSION['username'])) {
+                $this->view('templates/header', $data);
+            } else if (isset($_SESSION['username'])){
+                $this->view('templates/headerPeserta', $data);
+            } 
+            
             $this->view('home/index', $data);
             $this->view('templates/footer');
         }

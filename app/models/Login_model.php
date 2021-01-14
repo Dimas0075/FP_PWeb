@@ -13,5 +13,13 @@
             $this->db->bind('password', $data['password']);
             return $this->db->single();
         }
+
+        public function getLoginAdmin($data)
+        {
+            $this->db->query("SELECT * FROM admin WHERE username=:username AND password=:password");
+            $this->db->bind('username', $data['username']);
+            $this->db->bind('password', $data['password']);
+            return $this->db->single();
+        }
     }
 ?>
